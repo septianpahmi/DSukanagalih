@@ -9,7 +9,7 @@ use Filament\Resources\Pages\ListRecords;
 class ListResidents extends ListRecords
 {
     protected static string $resource = ResidentResource::class;
-
+    protected static ?string $title = 'Data Penduduk';
     protected function getHeaderActions(): array
     {
         return [

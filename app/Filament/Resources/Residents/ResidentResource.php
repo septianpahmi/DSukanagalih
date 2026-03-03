@@ -15,6 +15,7 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use UnitEnum;
 
 class ResidentResource extends Resource
 {
@@ -22,8 +23,12 @@ class ResidentResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUserGroup;
 
-    protected static ?string $recordTitleAttribute = 'Resident';
-
+    protected static ?string $recordTitleAttribute = 'Data Penduduk';
+    protected static ?string $navigationLabel = 'Data Penduduk';
+    protected static ?string $modelLabel = 'Data Penduduk';
+    protected static ?string $pluralModelLabel = 'Data Penduduk';
+    protected static string | UnitEnum | null $navigationGroup = 'Master Data';
+    protected static ?int $navigationSort = 1;
     public static function form(Schema $schema): Schema
     {
         return ResidentForm::configure($schema);

@@ -19,6 +19,8 @@ class VulnerableResidentsTable
             ->columns([
                 TextColumn::make('no_kk')
                     ->label('Nomor KK')
+                    ->limit(10)
+                    ->tooltip(fn($record) => $record->no_kk)
                     ->searchable(),
                 TextColumn::make('name')
                     ->label('Nama Lengkap')
@@ -29,13 +31,18 @@ class VulnerableResidentsTable
                     ->sortable(),
                 TextColumn::make('address')
                     ->label('Alamat')
+                    ->limit(15)
+                    ->tooltip(fn($record) => $record->address)
                     ->searchable(),
                 TextColumn::make('status')
                     ->label('Status')
                     ->searchable(),
                 TextColumn::make('coordinates')
                     ->label('Koordinat')
-                    ->searchable(),
+                    ->searchable()
+                    ->limit(15)
+                    ->tooltip(fn($record) => $record->coordinates)
+                    ->toggleable(isToggledHiddenByDefault: false),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
