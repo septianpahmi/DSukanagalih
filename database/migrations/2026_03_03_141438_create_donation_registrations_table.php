@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('donation_registrations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('donation_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('name');
             $table->string('contact');
             $table->integer('quantity');
