@@ -131,8 +131,24 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     new Swiper(".donationSwiper", {
-        slidesPerView: 3.5,
         spaceBetween: 20,
+
+        slidesPerView: 1.2,
+
+        breakpoints: {
+            640: {
+                slidesPerView: 1.5,
+            },
+            768: {
+                slidesPerView: 2.2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+            1280: {
+                slidesPerView: 3.5,
+            }
+        },
 
         navigation: {
             nextEl: ".swiper-button-next",
