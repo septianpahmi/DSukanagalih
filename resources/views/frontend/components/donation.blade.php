@@ -1,23 +1,24 @@
 <section class="bg-white">
     <div class="p-8 mx-auto max-w-screen-xl ">
         <h2 class="mb-2 text-3xl font-bold text-gray-900 text-center">Penggalangan Mendesak</h2>
-        <p class="mb-6 text-lg font-normal text-gray-700 text-center">Your donation can make a
-            real
-            difference in the lives of those in need.</p>
+        <p class="mb-6 text-lg font-normal text-gray-700 text-center">Donasi Anda dapat memberikan perubahan nyata bagi
+            kehidupan mereka
+            yang sedang membutuhkan bantuan.</p>
         <div class="relative">
             <div
-                class="pointer-events-none absolute left-0 top-0 h-full w-15 
+                class="pointer-events-none absolute left-0 top-0 h-full w-16 
                 bg-gradient-to-r from-white to-transparent z-10">
             </div>
             <div
-                class="pointer-events-none absolute right-0 top-0 h-full w-115
+                class="pointer-events-none absolute right-0 top-0 h-full w-16
                 bg-gradient-to-l from-white to-transparent z-10">
             </div>
             <div class="swiper donationSwiper">
                 <div class="swiper-wrapper mb-12">
                     @foreach ($donations as $donation)
                         <div class="swiper-slide">
-                            <div class="bg-white-soft block max-w-sm border border-default rounded-lg shadow-xs mt-8">
+                            <div
+                                class="bg-white-soft block max-w-sm h-full border border-default rounded-lg shadow-xs mt-8">
                                 <img class="rounded-t-lg" src="storage/{{ $donation->image }}"
                                     alt="{{ $donation->image }}" />
                                 <div class="p-4">

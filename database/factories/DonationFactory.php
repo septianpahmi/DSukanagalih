@@ -39,7 +39,7 @@ class DonationFactory extends Factory
             'latitude' => '-6.702123134023894',
             'longitude' => '107.0560458167822',
             'status' => true,
-            'image' => 'img/banner/banner.jpg',
+            'image' => 'donations/banner.jpg',
         ];
     }
 }
