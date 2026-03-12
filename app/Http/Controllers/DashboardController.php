@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DonationRegistration;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -17,6 +18,7 @@ class DashboardController extends Controller
     {
         $title = "Donasi Saya";
         $user = User::where('id', $id)->first();
-        return view('frontend.components.dashboard.index', compact('title', 'user'));
+        $donations = DonationRegistration::where('user_id', $id)->get();
+        return view('frontend.components.dashboard.donation', compact('title', 'user', 'donations'));
     }
 }

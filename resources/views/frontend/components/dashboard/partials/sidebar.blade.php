@@ -10,7 +10,7 @@
             <li>
                 <a href="{{ route('mydashboard', ['id' => $user->id, 'name' => $user->name]) }}"
                     class="flex items-center px-2 py-1.5 text-body rounded-lg hover:bg-orange-100 hover:text-orange-500 group 
-        {{ request()->routeIs('mydashboard') ? 'bg-orange-100 text-orange-500' : 'bg-gray-600' }}">
+        {{ request()->routeIs('mydashboard') ? 'bg-orange-100 text-orange-500' : 'bg-white' }}">
 
                     <svg class="w-5 h-5 transition duration-75 group-hover:text-orange-500"
                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -25,7 +25,7 @@
             </li>
             <li>
                 <a href="{{ route('mydonation', ['id' => $user->id, 'name' => $user->name]) }}"
-                    class="flex items-center px-2 py-1.5 text-body rounded-lg hover:bg-orange-100 hover:text-orange-500 group {{ request()->routeIs('mydashboard') ? 'bg-orange-100 text-orange-500' : 'bg-gray-600' }}">
+                    class="flex items-center px-2 py-1.5 text-body rounded-lg hover:bg-orange-100 hover:text-orange-500 group {{ request()->routeIs('mydonation') ? 'bg-orange-100 text-orange-500' : 'bg-white' }}">
                     <svg class="shrink-0 w-5 h-5 transition duration-75 group-hover:text-orange-500" aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
                         viewBox="0 0 24 24">
