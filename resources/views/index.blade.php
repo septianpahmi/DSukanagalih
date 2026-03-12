@@ -6,5 +6,5 @@
 @include('frontend.components.donation', ['donations' => $donations])
 
 @include('frontend.components.gallery')
-@include('frontend.components.news')
+{{-- @include('frontend.components.news') --}}
 @include('frontend.partials.footer')

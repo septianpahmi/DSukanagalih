@@ -9,9 +9,11 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Forms\Components\FileUpload;
 use Filament\Tables\Columns\IconColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
+use Illuminate\Support\Facades\Storage;
 
 class DonationRegistrationsTable
 {
@@ -52,6 +54,22 @@ class DonationRegistrationsTable
                         'Rejected'  => 'danger',
                         'Cancelled' => 'warning',
                     }),
+                TextColumn::make('proof')
+                    ->label('Bukti Donasi')
+                    ->getStateUsing(function ($record) {
+
+                        if (!$record->proof_photo) {
+                            return 'Belum ada bukti';
+                        }
+                        $url = Storage::url($record->proof_photo);
+                        $name = basename($record->proof_photo);
+
+                        return "<a href='{$url}' target='_blank' class='text-blue-500 underline'>"
+                            . \Illuminate\Support\Str::limit($name, 10) .
+                            "</a>";
+                    })
+                    ->html()
+                    ->tooltip(fn($record) => $record->proof_photo ? basename($record->proof_photo) : 'Belum ada bukti'),
             ])
             ->filters([
                 SelectFilter::make('status')
@@ -111,42 +129,42 @@ class DonationRegistrationsTable
                                 'status' => 'Cancelled',
                             ]);
                         }),
-                    Action::make('generateInvoice')
-                        ->label('Generate Surat')
-                        ->icon('heroicon-o-document-text')
-                        ->color('primary')
-                        ->visible(fn($record) => $record->status === 'Verified')
-                        ->action(function ($record) {
+                    // Action::make('generateInvoice')
+                    //     ->label('Generate Surat')
+                    //     ->icon('heroicon-o-document-text')
+                    //     ->color('primary')
+                    //     ->visible(fn($record) => $record->status === 'Verified')
+                    //     ->action(function ($record) {
 
-                            $pdf = Pdf::loadView('filament.components.donation-invoice', [
-                                'donation' => $record,
-                                'date' => now(),
-                                'invoice_number' => 'INV-DON-' . str_pad($record->id, 5, '0', STR_PAD_LEFT),
-                            ]);
+                    //         $pdf = Pdf::loadView('filament.components.donation-invoice', [
+                    //             'donation' => $record,
+                    //             'date' => now(),
+                    //             'invoice_number' => 'INV-DON-' . str_pad($record->id, 5, '0', STR_PAD_LEFT),
+                    //         ]);
 
-                            return response()->streamDownload(
-                                fn() => print($pdf->output()),
-                                'Invoice-Donation-' . $record->id . '.pdf'
-                            );
-                        }),
-                    Action::make('viewResult')
-                        ->label('View')
-                        ->icon('heroicon-o-eye')
-                        ->color('default')
-                        ->modalHeading('Bukti Donasi')
-                        ->visible(fn($record) => $record->status === 'Delivered')
-                        ->modalContent(function ($record) {
-                            $lastResult = $record;
+                    //         return response()->streamDownload(
+                    //             fn() => print($pdf->output()),
+                    //             'Invoice-Donation-' . $record->id . '.pdf'
+                    //         );
+                    //     }),
+                    // Action::make('viewResult')
+                    //     ->label('View')
+                    //     ->icon('heroicon-o-eye')
+                    //     ->color('default')
+                    //     ->modalHeading('Bukti Donasi')
+                    //     ->visible(fn($record) => $record->status === 'Delivered')
+                    //     ->modalContent(function ($record) {
+                    //         $lastResult = $record;
 
-                            if (! $lastResult) {
-                                return 'Tidak ada hasil yang tersedia.';
-                            }
-                            return view('filament.components.view-donation-proof', [
-                                'result' => $lastResult,
-                            ]);
-                        })
-                        ->slideOver()
-                        ->modalSubmitAction(false),
+                    //         if (! $lastResult) {
+                    //             return 'Tidak ada hasil yang tersedia.';
+                    //         }
+                    //         return view('filament.components.view-donation-proof', [
+                    //             'result' => $lastResult,
+                    //         ]);
+                    //     })
+                    //     ->slideOver()
+                    //     ->modalSubmitAction(false),
                 ]),
             ])
             ->toolbarActions([

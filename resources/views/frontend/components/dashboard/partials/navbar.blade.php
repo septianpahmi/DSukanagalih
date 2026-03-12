@@ -44,11 +44,11 @@
                                 </p>
                             </div>
                             <ul class="p-2 text-sm text-body font-medium" role="none">
-                                <li>
+                                {{-- <li>
                                     <a href="#"
                                         class="inline-flex items-center w-full p-2 hover:bg-neutral-tertiary-medium hover:text-heading rounded"
                                         role="menuitem">Settings</a>
-                                </li>
+                                </li> --}}
                                 <li>
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf

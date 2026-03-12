@@ -32,4 +32,10 @@ class HomeController extends Controller
         }
         return view('index', compact('title', 'donations', 'progress', 'daysLeft'));
     }
+
+    public function about()
+    {
+        $title = "Tentang Kami";
+        return view('frontend.components.pages.about', compact('title'));
+    }
 }

@@ -28,7 +28,7 @@
                 </div>
                 <div class="w-full bg-gray-200 rounded-full">
                     <div class="bg-orange-500 text-xs mb-6 font-medium text-white text-center p-0.5 leading-none rounded-full h-4 flex items-center justify-center"
-                        style="width: {{ $progress }}%">{{ $progress }}%</div>
+                        style="width: {{ $progress }}%"></div>
                 </div>
                 <div class="flex flex-cols items-center justify-between">
                     <div>

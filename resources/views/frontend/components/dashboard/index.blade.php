@@ -2,130 +2,42 @@
 @include('frontend.components.dashboard.partials.navbar')
 @include('frontend.components.dashboard.partials.sidebar')
 <div class="p-4 sm:ml-64 mt-14">
-    <div class="p-4 border-1 border-default border-dashed rounded-base">
-        <div class="grid grid-cols-3 gap-4 mb-4">
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                        fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
+    <div class="p-4 border border-dashed rounded-lg border-gray-300">
+        <h1 class="text-3xl font-bold text-gray-900 mb-6">
+            Dashboard
+        </h1>
+        <div
+            class="relative overflow-hidden rounded-xl bg-gradient-to-r from-orange-500 to-orange-400 text-white shadow-lg p-6">
+
+            <!-- Decorative Circle -->
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-white/10 rounded-full"></div>
+            <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-white/10 rounded-full"></div>
+
+            <div class="relative z-10 flex items-center justify-between flex-wrap gap-4">
+
+                <div>
+                    <h5 class="text-2xl font-bold mb-2">
+                        Selamat Datang,
+                        <span class="underline decoration-white/40">
+                            {{ Auth::user()->name }}
+                        </span>
+                    </h5>
+
+                    <p class="text-white/90">
+                        Ini adalah halaman dashboard Anda. Kelola data dan aktivitas sistem dengan mudah.
+                    </p>
+                </div>
+
+                {{-- <div class="hidden md:flex items-center gap-3">
+                    <div class="bg-white/20 backdrop-blur px-4 py-2 rounded-lg text-sm">
+                        {{ now()->format('d M Y') }}
+                    </div>
+                </div> --}}
+
             </div>
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
-            </div>
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
-            </div>
+
         </div>
-        <div class="flex items-center justify-center h-48 rounded-base bg-neutral-secondary-soft mb-4">
-            <p class="text-fg-disabled">
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M5 12h14m-7 7V5" />
-                </svg>
-            </p>
-        </div>
-        <div class="grid grid-cols-2 gap-4 mb-4">
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
-            </div>
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
-            </div>
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
-            </div>
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
-            </div>
-        </div>
-        <div class="flex items-center justify-center h-48 rounded-base bg-neutral-secondary-soft mb-4">
-            <p class="text-fg-disabled">
-                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M5 12h14m-7 7V5" />
-                </svg>
-            </p>
-        </div>
-        <div class="grid grid-cols-2 gap-4">
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
-            </div>
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
-            </div>
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
-            </div>
-            <div class="flex items-center justify-center h-24 rounded-base bg-neutral-secondary-soft">
-                <p class="text-fg-disabled">
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                        height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M5 12h14m-7 7V5" />
-                    </svg>
-                </p>
-            </div>
-        </div>
+
     </div>
 </div>
 @include('frontend.components.dashboard.partials.footer')

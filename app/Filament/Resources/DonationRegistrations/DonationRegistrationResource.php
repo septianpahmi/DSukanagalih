@@ -64,7 +64,7 @@ class DonationRegistrationResource extends Resource
         return [
             'index' => ListDonationRegistrations::route('/'),
             // 'create' => CreateDonationRegistration::route('/create'),
-            'view' => ViewDonationRegistration::route('/{record}'),
+            // 'view' => ViewDonationRegistration::route('/{record}'),
             // 'edit' => EditDonationRegistration::route('/{record}/edit'),
         ];
     }

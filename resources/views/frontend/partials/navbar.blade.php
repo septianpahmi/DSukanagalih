@@ -39,7 +39,8 @@
                             </div>
                             {{-- {{ route('mydashboard', ['id' => Auth::id(), 'name' => Auth::user()->name]) }} --}}
                             <div class="px-4 py-3">
-                                <a href="#" class="block text-sm text-gray-900">Donasi Saya</a>
+                                <a href="{{ route('mydashboard', ['id' => Auth::id(), 'name' => Auth::user()->name]) }}"
+                                    class="block text-sm text-gray-900">Donasi Saya</a>
                             </div>
 
                             <ul class="py-2">
@@ -76,7 +77,7 @@
                             aria-current="page">Home</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="{{ route('about') }}"
                             class="block py-2 px-3 text-heading rounded hover:bg-neutral-tertiary md:hover:bg-transparent md:border-0 md:hover:text-fg-brand md:p-0 md:dark:hover:bg-transparent">Tentang</a>
                     </li>
                     <li>
