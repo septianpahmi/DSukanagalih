@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-<base href="/public">
+<html lang="en" class="scroll-smooth">
+{{-- <base href="/public"> --}}
 
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         .swiper-button-next,
         .swiper-button-prev {
             color: #ff7112;

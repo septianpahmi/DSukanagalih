@@ -1,4 +1,4 @@
-<section class="bg-white">
+<section class="bg-white pt-24" id="donasi">
     <div class="p-8 mx-auto max-w-screen-xl ">
         <h2 class="mb-2 text-3xl font-bold text-gray-900 text-center">Penggalangan Mendesak</h2>
         <p class="mb-6 text-lg font-normal text-gray-700 text-center">Donasi Anda dapat memberikan perubahan nyata bagi
@@ -45,7 +45,7 @@
                                     </div>
                                     <div class="w-full bg-gray-200 rounded-full">
                                         <div class="bg-orange-500 text-xs mb-6 font-medium text-white text-center p-0.5 leading-none rounded-full h-2 flex items-center justify-center"
-                                            style="width: {{ $progress }}%"></div>
+                                            style="width: {{ $donation->progress }}%"></div>
                                     </div>
                                     <div class="flex flex-cols items-center justify-between">
                                         <div>
@@ -55,8 +55,8 @@
                                             </p>
                                         </div>
                                         <div>
-                                            <p class="text-gray-600 text-sm font-semibold">{{ $daysLeft }} <span
-                                                    class="font-normal">Hari
+                                            <p class="text-gray-600 text-sm font-semibold">{{ $donation->daysLeft }}
+                                                <span class="font-normal">Hari
                                                     lagi</span></p>
                                         </div>
                                     </div>

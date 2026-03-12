@@ -1,61 +1,15 @@
-<section class="bg-white">
-    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <h2 class="mb-2 text-2xl font-bold text-gray-700 text-center">Galeri Kegiatan</h2>
+ <section class="bg-white pt-24" id="galeri">
+     <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+         <h2 class="mb-2 text-2xl font-bold text-gray-900 text-center">Galeri Kegiatan</h2>
 
+         <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
+             @foreach ($galeries as $galeri)
+                 <div>
+                     <img class="h-auto max-w-full rounded-base" src="storage/{{ $galeri->image }}"
+                         alt="{{ $galeri->title }}">
+                 </div>
+             @endforeach
 
-
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-7.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-8.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-9.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg" alt="">
-            </div>
-            <div>
-                <img class="h-auto max-w-full rounded-base"
-                    src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg" alt="">
-            </div>
-        </div>
-
-
-
-    </div>
-</section>
+         </div>
+     </div>
+ </section>

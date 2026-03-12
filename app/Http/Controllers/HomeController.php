@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Donation;
 use App\Models\DonationRegistration;
+use App\Models\Gallery;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,13 +25,14 @@ class HomeController extends Controller
             //progress
             $collected = $donation->registrations_sum_quantity ?? 0;
             $target = $donation->target_quantity ?? 1;
-            $progress = min(100, ($collected / $target) * 100);
-            //deadline
+            $donation->progress = min(100, ($collected / $target) * 100);
+            //deadline 
             $today = \Carbon\Carbon::today();
             $deadline = \Carbon\Carbon::parse($donation->deadline);
-            $daysLeft = max(0, $today->diffInDays($deadline, false));
+            $donation->daysLeft = max(0, $today->diffInDays($deadline, false));
         }
-        return view('index', compact('title', 'donations', 'progress', 'daysLeft'));
+        $galeries = Gallery::all();
+        return view('index', compact('title', 'donations', 'galeries'));
     }
 
     public function about()

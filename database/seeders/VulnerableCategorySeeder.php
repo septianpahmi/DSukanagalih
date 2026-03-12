@@ -43,37 +43,37 @@ class VulnerableCategorySeeder extends Seeder
                 'criteria' => 'Monitoring Kesehatan Rutin',
                 'is_active' => 1,
             ],
-             [
+            [
                 'name' => 'Difabel Fisik (Perempuan)',
                 'criteria' => 'Aksesibilitas MCK Khusus',
                 'is_active' => 1,
             ],
-             [
+            [
                 'name' => 'Difabel Fisik (Pria)',
                 'criteria' => 'Aksesibilitas MCK Khusus',
                 'is_active' => 1,
             ],
-                [
-                    'name' => 'Difabel Mental (Perempuan)',
-                    'criteria' => 'Dukungan Psikososial Khusu',
-                    'is_active' => 1,
-                ],
-                [
-                    'name' => 'Difabel Mental (Pria)',
-                    'criteria' => 'Dukungan Psikososial Khusu', 
-                    'is_active' => 1,
-                ],
-                [
-                    'name' => 'Non-Rentean (Perempuan)',
-                    'criteria' => 'Tenaga Bantuan/Dapur Umum',
-                    'is_active' => 1,
-                ],
-                [
-                    'name' => 'Non-Rentean (Pria)',
-                    'criteria' => 'Tenaga Bantuan/Keamanan',
-                    'is_active' => 1,
-                ],
-    ];
+            [
+                'name' => 'Difabel Mental (Perempuan)',
+                'criteria' => 'Dukungan Psikososial Khusu',
+                'is_active' => 1,
+            ],
+            [
+                'name' => 'Difabel Mental (Pria)',
+                'criteria' => 'Dukungan Psikososial Khusu',
+                'is_active' => 1,
+            ],
+            [
+                'name' => 'Non-Rentan (Perempuan)',
+                'criteria' => 'Tenaga Bantuan/Dapur Umum',
+                'is_active' => 1,
+            ],
+            [
+                'name' => 'Non-Rentan (Pria)',
+                'criteria' => 'Tenaga Bantuan/Keamanan',
+                'is_active' => 1,
+            ],
+        ];
         foreach ($vulnerableCategories as $category) {
             \App\Models\VulnerableCategory::create($category);
         }

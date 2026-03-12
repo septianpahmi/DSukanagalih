@@ -130,6 +130,40 @@
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                const id = entry.target.getAttribute("id");
+
+                navLinks.forEach(link => {
+
+                    link.classList.remove("text-orange-500");
+
+                    if (link.getAttribute("href") === "#" + id) {
+                        link.classList.add("text-orange-500");
+                    }
+
+                });
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.6
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+</script>
+<script>
     new Swiper(".donationSwiper", {
         spaceBetween: 20,
 

@@ -1,4 +1,4 @@
-<section class="bg-white">
+<section class="bg-white pt-24" id="tentang">
     <div class="p-8 mx-auto max-w-screen-xl">
         <div class="grid gap-8 mb-6 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
             <div class="flex flex-col items-center bg-white rounded-lg shadow-sm md:flex-row md:max-w-xl">

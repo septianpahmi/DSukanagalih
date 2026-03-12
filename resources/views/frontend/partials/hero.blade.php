@@ -1,5 +1,5 @@
-<section class="relative mt-12 bg-center bg-no-repeat bg-dark bg-blend-multiply"
-    style="background-image: url('{{ asset('img/photo/bg_7.jpg') }}')">
+<section class="relative mt-12 bg-center bg-no-repeat bg-dark bg-blend-multiply pt-24"
+    style="background-image: url('{{ asset('img/photo/bg_7.jpg') }}')" id="home">
     <div class="p-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
         <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
             Berbuat Baik Bukanlah Sebuah Pilihan, Tetapi Sebuah Kewajiban</h1>
