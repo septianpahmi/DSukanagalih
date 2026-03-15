@@ -34,4 +34,18 @@ class Resident extends Model
     {
         return $this->hasOne(VulnerableResident::class, 'resident_id');
     }
+    public function residents()
+    {
+        return $this->belongsToMany(
+            Resident::class,
+            'vulnerable_residents'
+        );
+    }
+    public function vulnerableCategories()
+    {
+        return $this->belongsToMany(
+            VulnerableCategory::class,
+            'vulnerable_residents'
+        );
+    }
 }
